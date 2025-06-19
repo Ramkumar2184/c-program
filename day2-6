@@ -1,0 +1,29 @@
+dept repay
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+
+
+int main() {
+    int a, b, c;
+    float i, amount, discount, final;
+
+    scanf("%d%d%d", &a, &b, &c);
+
+    i = (a * b * c) / 100.0; 
+    amount= a+i;
+    discount = i * 0.02;              
+    final = amount - discount;
+
+    printf("%.2f\n", i);
+    printf("%.2f\n", amount);
+    printf("%.2f\n", discount);
+    printf("%.2f\n", final);
+
+    return 0;
+}
