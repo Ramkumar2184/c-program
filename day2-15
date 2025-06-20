@@ -1,0 +1,50 @@
+Arithmetic Calculation-case
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    char op;
+    float result;
+
+    // Read inputs
+    if (scanf("%d", &a) != 1) return 0;
+    if (scanf("%d", &b) != 1) return 0;
+    // Read operator; space before %c skips any newline
+    scanf(" %c", &op);
+
+    switch (op) {
+        case '+':
+            result = a + b;
+            printf("Addition of two number is %.1f\n", result);
+            break;
+        case '-':
+            result = a - b;
+            printf("Subtraction of two number is %.1f\n", result);
+            break;
+        case '*':
+            result = a * b;
+            printf("Multiplication of two number is %.1f\n", result);
+            break;
+        case '/':
+            if (b == 0) {
+                printf("Invalid Input\n");
+            } else {
+                result = (float)a / b;
+                printf("Division of two number is %.1f\n", result);
+            }
+            break;
+        case '%':
+            if (b == 0) {
+                printf("Invalid Input\n");
+            } else {
+                // Perform modulo, cast to float for consistent printing
+                result = a % b;
+                printf("Modulo of two number is %.1f\n", result);
+            }
+            break;
+        default:
+            printf("Invalid Input\n");
+    }
+
+    return 0;
+}
