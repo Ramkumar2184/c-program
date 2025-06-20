@@ -1,0 +1,26 @@
+Product of Range
+#include <stdio.h>
+
+int main() {
+    int n;
+    unsigned long long product = 1;
+
+    // Prompt the user to enter a number
+  
+    scanf("%d", &n);
+
+    // Check if the input is a positive integer
+    if (n < 0) {
+        printf("Invalid Input\n");
+        return 1; // Exit the program with an error code
+    }
+
+    // Calculate the product (factorial)
+    for (int i = 1; i <= n; ++i) {
+        product *= i;
+    }
+
+    // Display the result
+    printf("Product of value is %llu\n", product);
+    return 0;
+}
