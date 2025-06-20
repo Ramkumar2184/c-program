@@ -1,0 +1,21 @@
+Gardening
+#include <stdio.h>
+
+int main() {
+    int R, C, N;
+    if (scanf("%d %d %d", &R, &C, &N) != 3) return 0;
+
+    if (N < 1 || N > R * C) {
+        printf("It is not a mango tree\n");
+    } else {
+        
+        int col = (N - 1) / R + 1;
+        if (col == 2 || col == C - 1) {
+            printf("It is a mango tree\n");
+        } else {
+            printf("It is not a mango tree\n");
+        }
+    }
+
+    return 0;
+}
