@@ -1,0 +1,30 @@
+Calculating Gain Percentage
+#include <stdio.h>
+
+int main() {
+  
+    float A, B, C;
+    
+    
+    scanf("%f", &A);
+    
+ 
+    scanf("%f", &B);
+    
+    
+    scanf("%f", &C);
+    
+
+    float total_cost = A + B;
+    
+  
+    float gain = C - total_cost;
+    
+    
+    float gain_percentage = (gain / total_cost) * 100;
+    
+ 
+    printf("%.2f\n", gain_percentage);
+    
+    return 0;
+}
