@@ -1,0 +1,42 @@
+Friendly pair
+#include <stdio.h>
+
+// Compute sum of all divisors of n, including n itself
+long long sum_of_divisors(int n) {
+    long long sum = 0;
+    for (int i = 1; i * i <= n; i++) {
+        if (n % i == 0) {
+            sum += i;
+            int j = n / i;
+            if (j != i) sum += j;
+        }
+    }
+    return sum;
+}
+
+// Compute GCD of two integers
+int gcd(int a, int b) {
+    return b == 0 ? a : gcd(b, a % b);
+}
+
+int main() {
+    int a, b;
+    if (scanf("%d %d", &a, &b) != 2) return 0;
+
+    long long sa = sum_of_divisors(a);
+    long long sb = sum_of_divisors(b);
+
+    // Reduce the fractions sa/a and sb/b
+    int ga = gcd(sa, a);
+    int gb = gcd(sb, b);
+
+    long long num1 = sa / ga, den1 = a / ga;
+    long long num2 = sb / gb, den2 = b / gb;
+
+    if (num1 == num2 && den1 == den2)
+        printf("Friendly Pair\n");
+    else
+        printf("Not Friendly Pair\n");
+
+    return 0;
+}
