@@ -1,0 +1,28 @@
+P2 - Green Lights
+#include <stdio.h>
+
+int main() {
+    
+    float speed, distance, time;
+    
+  
+    scanf("%f", &speed);
+    
+  
+    scanf("%f", &distance);
+    
+  
+    scanf("%f", &time);
+    
+    
+    float time_to_reach_light = (distance / speed) * 3600;
+    
+    
+    if (time_to_reach_light <= time) {
+        printf("Yes\n");
+    } else {
+        printf("No\n");
+    }
+    
+    return 0;
+}
