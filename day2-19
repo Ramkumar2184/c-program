@@ -1,0 +1,37 @@
+Account Balance
+#include <stdio.h>
+
+int main() {
+    double balance, amount;
+    int process;
+
+    // Input initial balance
+    scanf("%lf", &balance);
+
+    // Input process type
+    scanf("%d", &process);
+
+    switch (process) {
+        case 1: // Deposit
+            scanf("%lf", &amount);
+            balance += amount;
+            printf("%.2f\n", balance);
+            break;
+
+        case 2: // Withdraw
+            scanf("%lf", &amount);
+            if (amount > balance) {
+                printf("Insufficient Balance\n");
+            } else {
+                balance -= amount;
+                printf("%.2f\n", balance);
+            }
+            break;
+
+        default: // Invalid input
+            printf("Invalid Input\n");
+            break;
+    }
+
+    return 0;
+}
