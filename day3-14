@@ -1,0 +1,34 @@
+Queue
+#include <stdio.h>
+
+int main() {
+    int n, m;
+    
+    
+    scanf("%d %d", &n, &m);
+    
+    int a[n];
+    
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    }
+    
+    int buses = 1;  
+    int current_capacity = 0;  
+    
+    for (int i = 0; i < n; i++) {
+        if (current_capacity + a[i] <= m) {
+    
+            current_capacity += a[i];
+        } else {
+            
+            buses++;
+            current_capacity = a[i];  
+        }
+    }
+    
+
+    printf("%d\n", buses);
+    
+    return 0;
+}
